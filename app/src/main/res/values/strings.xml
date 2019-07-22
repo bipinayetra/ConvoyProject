@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Convoy</string>
+    <string name="alert_confirmation">Great! Sending you lane notifications to help keep your foot on the pedal</string>
+    <string name="alert_title">Success</string>
 </resources>
