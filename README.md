@@ -3,9 +3,13 @@
 Steps to install:
 
 1)Import this project directly to your local machine.
+
 2)Project the Version control will directly build in Android Studio
+
 3)Choose emulator or phone which is between minSdkVersion 23 and targetSdkVersion 28
+
 4)Build the project
+
 5)Run this app in an emulator or on a phone.
 
 ![Logo](preview/page-1-app_results.png)

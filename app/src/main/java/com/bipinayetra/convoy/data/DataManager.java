@@ -35,6 +35,7 @@ public class DataManager {
         OffersDatabase db = OffersDatabase.getInstance(application);
         offerLocalCache = new OfferLocalCache(db.offerDao());
         convoyService = ConvoyService.getInstance(application);
+        networkErrors = new MutableLiveData<>();
     }
 
     public void loadOffers(){
@@ -68,7 +69,7 @@ public class DataManager {
 
         boundaryCallback = new OfferBoundaryCallback(convoyService,offerLocalCache);
 
-        networkErrors = new MutableLiveData<>();
+
 
         boundaryCallback._networkErrors.observeForever(new Observer<String>() {
             @Override

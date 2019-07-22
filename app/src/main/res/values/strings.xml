@@ -2,4 +2,6 @@
     <string name="app_name">Convoy</string>
     <string name="alert_confirmation">Great! Sending you lane notifications to help keep your foot on the pedal</string>
     <string name="alert_title">Success</string>
+    <string name="error_title">Bad Weather Condition</string>
+    <string name="retrofit_error_msg"><![CDATA[Whoops !!! Network error->%s]]></string>
 </resources>

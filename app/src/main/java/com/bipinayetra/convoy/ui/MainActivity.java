@@ -55,15 +55,17 @@ public class MainActivity extends AppCompatActivity {
         alertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
-                builder.setMessage(R.string.alert_confirmation)
-                        .setTitle(R.string.alert_title);
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                showConfirmationDialog();
             }
         });
+    }
+
+    private void showConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(R.string.alert_confirmation)
+                .setTitle(R.string.alert_title);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void setupViewModel() {
@@ -115,8 +117,18 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(String t) {
 //                Toast.makeText(MainActivity.this, t.getMessage(),Toast.LENGTH_LONG).show();
                 Log.e("MainActivity","Throwable message ->"+t);
+
+                showErrorDialog(t);
             }
         });
+    }
+
+    private void showErrorDialog(String t) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(String.format(getString(R.string.retrofit_error_msg), t))
+                .setTitle(getString(R.string.error_title));
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void setupSinner() {
